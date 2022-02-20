@@ -1,6 +1,6 @@
 # You Verify
 
-Fills out a form automatically, **use at your own risk**.
+Fills out a form automatically, **USE AT YOUR OWN RISK**.
 
 ## Installation
 
