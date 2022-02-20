@@ -2,13 +2,21 @@
 
 Fills out a form automatically, **USE AT YOUR OWN RISK**.
 
-## Installation
+## How To Use
 
 First, make sure you have the Firefox browser and python 3 installed. Then, install all the required python dependencies with pip using:
 
-`pip install -r requirements.txt`
+```pip install -r requirements.txt```
 
 Then run `main.py` like any other python file.
+
+In this project's folder, you need to add a `.env` file with the following text in it (updated with your credentials):
+```
+# User credentials
+USERNAME=your_username
+PASSWORD=your_password
+```
+You can either copy the template above or use and rename the `template.env` file included in the repository.
 
 ## How it works:
 
