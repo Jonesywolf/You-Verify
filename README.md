@@ -39,3 +39,15 @@ Handles credentials, log in, etc. Called if redirected to sign in page https://i
 ### Form filler
 
 Handles filling out the form automatically and submitting it.
+
+## To Do:
+* screenshot the certificate and send it via email
+* add more exception handling
+* make printouts optional
+* make printouts prettier
+* add more options in .env:
+* for longer waits for elements to appear
+* for debug mode
+* headless mode
+* choice of browser
+* path to browser, if necessary

@@ -36,7 +36,9 @@ def submit_form(browser):
 
 def login(browser):
     user_creds = load_creds()
+    print("Loaded user credentials from .env")
     if user_creds:
+        print("Logging in...")
         fill_username(browser, user_creds)
         
         time.sleep(uniform(2, 4)) # seconds
@@ -49,3 +51,4 @@ def login(browser):
         time.sleep(uniform(2, 4)) # seconds
         
         submit_form(browser)
+        print("Logged in...")
