@@ -1,4 +1,3 @@
-from turtle import title
 from selenium.webdriver import Firefox
 from selenium.webdriver.firefox.options import Options
 from cred_utils import login
@@ -29,4 +28,6 @@ if __name__ == "__main__":
             print("Form completion failed") 
     else:
         print("Unexpected page title, you might have been redirected somewhere unexpected.")
+    
+    print("Quitting browser session...")
     quit()
