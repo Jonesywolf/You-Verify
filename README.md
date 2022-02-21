@@ -51,3 +51,4 @@ Handles filling out the form automatically and submitting it.
 * headless mode
 * choice of browser
 * path to browser, if necessary
+* optionallay use keyring instead of .env to store credentials
