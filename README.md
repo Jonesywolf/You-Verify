@@ -12,9 +12,15 @@ Then run `main.py` like any other python file.
 
 In this project's folder, you need to add a `.env` file with the following text in it (updated with your credentials):
 ```
-# User credentials
+# UTORID credentials
 USERNAME=your_username
 PASSWORD=your_password
+
+# Email
+GMAIL=your_email_address
+
+# Other settings
+HEADLESS_MODE = True
 ```
 You can either copy the template above or use and rename the `template.env` file included in the repository.
 
@@ -41,7 +47,6 @@ Handles credentials, log in, etc. Called if redirected to sign in page https://i
 Handles filling out the form automatically and submitting it.
 
 ## To Do:
-* screenshot the certificate and send it via email
 * add more exception handling
 * make printouts optional
 * make printouts prettier
@@ -51,3 +56,6 @@ Handles filling out the form automatically and submitting it.
 * headless mode
 * choice of browser
 * path to browser, if necessary
+* fix email sending using OAuth2
+* enable email sending in .env file
+* handle env file better, it's kinda janky passing env_contents around

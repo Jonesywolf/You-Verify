@@ -1,20 +1,7 @@
-from dotenv import dotenv_values
 from selenium.webdriver.common.by import By
 
 import time
 from random import uniform
-
-def load_creds(filename=".env"):
-    raw_creds = dotenv_values(filename)
-    creds = {}
-    try:
-        creds = {
-            "user" : raw_creds["USERNAME"],
-            "pass" : raw_creds["PASSWORD"]
-        }
-    except KeyError:
-        print(f"Invalid credential file: {filename}")
-    return creds
 
 def fill_username(browser, user_creds):
     if user_creds["user"]:
@@ -34,9 +21,7 @@ def submit_form(browser):
     submit_btn = browser.find_element(By.NAME, "_eventId_proceed")
     submit_btn.click()
 
-def login(browser):
-    user_creds = load_creds()
-    print("Loaded user credentials from .env")
+def login(browser, user_creds):
     if user_creds:
         print("Logging in...")
         fill_username(browser, user_creds)
