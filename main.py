@@ -24,6 +24,7 @@ if __name__ == "__main__":
            save_screenshots(browser, "badgeImage", "pageImage")
         else:
             print("Form completion failed")
+        send_email(gmail_addr, "badgeImage")
     # If we are prompted to sign in, we get redirected to: 
     # https://idpz.utorauth.utoronto.ca/idp/profile/SAML2/Redirect/SSO?execution=e1s1
     elif browser.title == "weblogin idpz | University of Toronto":
@@ -36,6 +37,7 @@ if __name__ == "__main__":
            save_screenshots(browser, "badgeImage", "pageImage")
         else:
             print("Form completion failed")
+        send_email(gmail_addr, "badgeImage")
     else:
         print("Unexpected page title, you might have been redirected somewhere unexpected.")
     
