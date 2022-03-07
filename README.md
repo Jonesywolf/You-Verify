@@ -59,4 +59,4 @@ Handles filling out the form automatically and submitting it.
 * fix email sending using OAuth2
 * enable email sending in .env file
 * handle env file better, it's kinda janky passing env_contents around
-* optionallay use keyring instead of .env to store credentials
+* optionally use keyring instead of .env to store credentials
