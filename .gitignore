@@ -133,3 +133,7 @@ dmypy.json
 
 # Default image paths
 screenshots/
+
+# Browser drivers
+chromedriver.*
+geckodriver.*

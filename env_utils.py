@@ -8,8 +8,11 @@ def load_dotenv(filename=".env"):
 def is_val_true(env_contents, key):
     return env_contents[key].lower() in ('true', '1', 'yes', 'y', 't')
 
-def use_headless_mode(env_contents):
+def is_headless_mode(env_contents):
     return is_val_true(env_contents, "HEADLESS_MODE")
+
+def get_browser(env_contents):
+    return env_contents["BROWSER"].upper()
 
 def get_creds(env_contents):
     creds = {}

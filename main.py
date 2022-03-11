@@ -1,4 +1,4 @@
-from selenium.webdriver import Firefox
+from selenium.webdriver import Firefox, Chrome, FirefoxOptions, ChromeOptions
 from selenium.webdriver.firefox.options import Options
 from cred_utils import login
 import env_utils
@@ -9,12 +9,31 @@ from email_utils import send_email
 if __name__ == "__main__":
     env_contents = env_utils.load_dotenv()
     gmail_addr = env_utils.load_gmail_addr(env_contents)
-        
-    opts = Options()
-    if env_utils.use_headless_mode(env_contents):
-        # No UI by default:
-        opts.headless = True
-    browser = Firefox(options=opts)
+    
+    if env_utils.get_browser(env_contents) == "FIREFOX":
+        print("Using Firefox driver")
+        opts = FirefoxOptions()
+        #TODO: refactor
+        if env_utils.is_headless_mode(env_contents):
+            # No UI by default:
+            opts.headless = True
+        browser = Firefox(options=opts)
+    elif env_utils.get_browser(env_contents) == "CHROME":
+        print("Using Chrome driver, make sure you have the right file for your operating system and browser version.")
+        opts = ChromeOptions()
+        #TODO: refactor
+        if env_utils.is_headless_mode(env_contents):
+            # No UI by default:
+            opts.headless = True
+        browser = Chrome(options=opts)
+    else:
+        print("Unrecognized BROWSER setting in .env, defaulting to Firefox...")
+        opts = FirefoxOptions()
+        #TODO: refactor
+        if env_utils.is_headless_mode(env_contents):
+            # No UI by default:
+            opts.headless = True
+        browser = Firefox(options=opts)
     
     browser.get("https://ucheck.utoronto.ca/")
     if browser.title == "My Thrive Health":
