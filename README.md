@@ -4,7 +4,7 @@ Fills out a form automatically, **USE AT YOUR OWN RISK**.
 
 ## How To Use
 
-First, make sure you have the Firefox browser and python 3 installed. Then, install all the required python dependencies with pip using:
+First, make sure you have the Firefox or Chrome web browser and python 3 installed. Then, install all the required python dependencies with pip using:
 
 ```pip install -r requirements.txt```
 
@@ -19,8 +19,10 @@ PASSWORD=your_password
 # Email
 GMAIL=your_email_address
 
-# Other settings
-HEADLESS_MODE = True
+# Browser settings
+HEADLESS_MODE=True
+# Supports CHROME or FIREFOX
+BROWSER=CHROME
 ```
 You can either copy the template above or use and rename the `template.env` file included in the repository.
 This project sends you an email (from yourself) with a screenshot of the survey completion, to access your
@@ -30,7 +32,7 @@ how to set one up, see: https://support.google.com/accounts/answer/185833
 ## How it works:
 
 * Use python dot env to parse the user's credentials
-* Use selenium and a headless Firefox Driver to crawl the webpage and fill out the form
+* Use selenium and a headless Firefox or Chrome Driver to crawl the webpage and fill out the form
 * Screenshot the completion badge and email it to the user using yagmail
 * Use a service like crontab or windows task scheduler to run the code every day
 
