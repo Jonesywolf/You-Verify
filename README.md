@@ -66,8 +66,6 @@ Handles email sending to the user from using their gmail account.
 * add more options in .env:
 * for longer waits for elements to appear
 * for debug mode
-* headless mode
-* choice of browser
 * path to browser, if necessary
 * enable email sending in .env file
 * handle env file better, it's kinda janky passing env_contents around
