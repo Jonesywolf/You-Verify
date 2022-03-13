@@ -137,3 +137,4 @@ screenshots/
 # Browser drivers
 chromedriver.*
 geckodriver.*
+geckodriver.exe
