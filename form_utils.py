@@ -53,7 +53,7 @@ def verify_form_completion(browser):
     # Wait for form completion to appear
     try:
         form_completed_elem = WebDriverWait(browser, 5).until(
-            EC.presence_of_element_located((By.ID, "status-0-0"))
+            EC.presence_of_element_located((By.ID, "lastCheckInLabel"))
         )
         form_completion_success = True
     except TimeoutException:

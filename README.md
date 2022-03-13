@@ -24,7 +24,6 @@ HEADLESS_MODE=True
 # Supports CHROME or FIREFOX
 BROWSER=CHROME
 ```
-You can either copy the template above or use and rename the `template.env` file included in the repository.
 This project sends you an email (from yourself) with a screenshot of the survey completion, to access your
 gmail account it requires that you set up an **application specific password**. For more details including
 how to set one up, see: https://support.google.com/accounts/answer/185833
@@ -72,3 +71,5 @@ Handles email sending to the user from using their gmail account.
 * enable email sending in .env file
 * handle env file better, it's kinda janky passing env_contents around
 * optionally use keyring instead of .env to store credentials
+* squash bug where verification element is screenshotted too early
+* Update README.md with instructions for installing browser drivers
