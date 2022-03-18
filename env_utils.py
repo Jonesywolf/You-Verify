@@ -40,4 +40,11 @@ def load_gmail_addr(env_contents):
     except KeyError:
         print("Missing GMAIL address in .env")
     return gmail_addr
-    
+
+def load_gmail_app_pass(env_contents):
+    try:
+        gmail_app_pass = env_contents["GMAIL_APP_PASS"]
+    except KeyError:
+        gmail_app_pass = None
+        print("No gmail app password detected, using keyring instead.")
+    return gmail_app_pass

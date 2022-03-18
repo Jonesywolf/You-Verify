@@ -18,6 +18,8 @@ PASSWORD=your_password
 
 # Email
 GMAIL=your_email_address
+# Optionally, uncomment the app password field below or store it in a keyring (default)
+# GMAIL_APP_PASS=your_app_password
 
 # Browser settings
 HEADLESS_MODE=True
