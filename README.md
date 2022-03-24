@@ -4,6 +4,8 @@ Fills out a form automatically, **USE AT YOUR OWN RISK**.
 
 ## How To Use
 
+### General Setup
+
 First, make sure you have the Firefox or Chrome web browser and python 3 installed. Then, install all the required python dependencies with pip using:
 
 ```pip install -r requirements.txt```
@@ -30,6 +32,36 @@ This project sends you an email (from yourself) with a screenshot of the survey 
 gmail account it requires that you set up an **application specific password**. For more details including
 how to set one up, see: https://support.google.com/accounts/answer/185833
 
+### Raspberry Pi Instructions
+
+Follow the above instructions under [General Setup]. 
+
+#### Chromedriver & Chromium
+
+Now, Chromium and Chromedriver need to have matching versions for the web scraping portion to work.
+Next, run the following commands to remove Chromium then reinstall matching Chromium and Chromedriver versions compiled on ARM [Source](https://stackoverflow.com/questions/65617246/issues-running-selenium-with-chromedriver-on-raspberry-pi-4):
+```console
+sudo apt purge --remove chromium-browser -y
+sudo apt autoremove && sudo apt autoclean -y
+sudo apt install chromium-chromedriver
+```
+
+#### Update .env Since Keyring Doesn't Work in Cron
+
+Unfortunately, I couldn't get KDE Wallet Manager to work with crontab, so you'll need to uncomment this line (and add your gmail app password) to the `.env` file (or figure out how to do it yourself, and if you do, please let me know):
+```
+GMAIL_APP_PASS=your_app_password
+```
+
+#### Add a .bat File for Running Your Python File
+
+I used a virtual environment for running my script which is optional (you can learn more about setting one up yourself [here](https://packaging.python.org/en/latest/guides/installing-using-pip-and-virtual-environments/))
+TODO
+
+#### Edit your Crontab
+
+TODO
+
 ## How it works:
 
 * Use python dot env to parse the user's credentials
@@ -46,6 +78,7 @@ how to set one up, see: https://support.google.com/accounts/answer/185833
 ## Code Division
 
 ### Env utils
+
 Handles user credentials from `.env` file.
 
 ### Cred Utils
