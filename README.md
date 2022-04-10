@@ -32,6 +32,40 @@ This project sends you an email (from yourself) with a screenshot of the survey 
 gmail account it requires that you set up an **application specific password**. For more details including
 how to set one up, see: https://support.google.com/accounts/answer/185833
 
+### Browser Driver Installation
+
+Selenium relies on a browser driver to puppet your browser, I didn't include it since the installation varies based on your choice of browser and OS, remember to place the driver in the root directory of this folder (where this `README` is) or add it to `PATH`.
+
+#### Chrome
+
+> **NOTE:** the version of `chromedriver` used must match the version of chrome installed on your machine. Your chrome version can be found at the following URL: [chrome://settings/help](chrome://settings/help)
+
+You can then find the corresponding version of `chromedriver` at this link: https://chromedriver.chromium.org/downloads
+
+#### Firefox
+
+For firefox, you can just use the latest release of `geckodriver` which can be found here: https://github.com/mozilla/geckodriver/releases
+
+#### Other browsers
+
+I have yet to test selenium on other browsers so you're on your own. That said, here are a few links that might help:
+* Safari: https://www.lambdatest.com/blog/selenium-safaridriver-macos/
+* Brave: https://stackoverflow.com/questions/47158434/how-to-run-selenium-tests-on-the-brave-web-browser
+* Opera: https://www.lambdatest.com/blog/automated-browser-testing-with-opera-and-selenium-in-python/
+
+### Automating It (Untested)
+
+You can run this script daily if you want using your OS. How this is done varies according to your operating system. I used a Raspberry Pi for this so the methods below are untested but should work. 
+
+> **NOTE:** If you are using a virtual environment as described above you need to make sure to use the python installation from there in your automation script. 
+
+> **NOTE 2:** You might alsorun into troubles if your browser driver is not on the `PATH`
+
+* Windows using `Task Scheduler`: https://datatofish.com/python-script-windows-scheduler/
+* Mac using `crontab`: https://python.plainenglish.io/auto-schedule-python-scripts-on-mac-37adac5db520
+* Linux using `crontab`: https://towardsdatascience.com/how-to-schedule-python-scripts-with-cron-the-only-guide-youll-ever-need-deea2df63b4e
+
+
 ### Raspberry Pi Instructions
 
 Follow the above instructions under [General Setup]. 
@@ -100,11 +134,8 @@ Handles email sending to the user from using their gmail account.
 * make printouts optional
 * make printouts prettier
 * add more options in .env:
-* for longer waits for elements to appear
-* for debug mode
-* path to browser, if necessary
-* enable email sending in .env file
+  * for longer waits for elements to appear
+  * for debug mode
+  * path to browser, if necessary
+  * enable email sending in .env file
 * handle env file better, it's kinda janky passing env_contents around
-* optionally use keyring instead of .env to store credentials
-* squash bug where verification element is screenshotted too early
-* Update README.md with instructions for installing browser drivers
